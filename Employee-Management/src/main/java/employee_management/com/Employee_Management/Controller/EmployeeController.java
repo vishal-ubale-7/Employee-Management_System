@@ -17,24 +17,28 @@ public class EmployeeController
     @Autowired
     private EmployeeService employeeService;
 
+    // insert employees 
     @PostMapping("/post")
     public ResponseEntity <List<Employee>> saveAll(@RequestBody List<Employee> employees)
     {
         return ResponseEntity.ok(employeeService.saveAll(employees));
     }
 
+    // getAll Employees
     @GetMapping
     public ResponseEntity<List<Employee>> getAll()
     {
         return ResponseEntity.ok(employeeService.getAll());
     }
 
+    // get Employee byId
     @GetMapping("/{id}")
     public Optional<Employee> getById(@PathVariable Long id)
     {
         return employeeService.getById(id);
     }
-
+    
+    // update employee byId
     @PutMapping("/{id}")
     public ResponseEntity<Employee> update(@PathVariable long id ,@RequestBody Employee employee)
 
@@ -43,6 +47,7 @@ public class EmployeeController
          return  updated !=null? ResponseEntity.ok(updated):ResponseEntity.notFound().build();
     }
 
+    // delete Employee byId
     public ResponseEntity<Void> delete(@PathVariable long id)
     {
         employeeService.delete(id);
