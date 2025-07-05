@@ -4,11 +4,10 @@ import employee_management.com.Employee_Management.Entity.Employee;
 import employee_management.com.Employee_Management.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import java.util.List;
 import java.util.Optional;
 
+// Service Layer Use Write Business logic 
 @Service
 public class EmployeeService
 {
