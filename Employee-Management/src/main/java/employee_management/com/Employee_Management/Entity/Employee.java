@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+//Entity Class Mapped With Database table 
+
 @Entity
 public class Employee
 {
